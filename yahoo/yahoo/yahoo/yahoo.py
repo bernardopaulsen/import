@@ -2,7 +2,6 @@ import datetime as dt
 import numpy as np
 import pandas as pd
 import pandas_datareader.data as web
-import progress
 
 def get(stock : str, start : tuple, end : tuple) -> pd.DataFrame:
     """
@@ -54,12 +53,10 @@ def multiple(tickers: list, column: str, start: tuple, end : tuple) -> pd.DataFr
     for ticker in tickers:
         while  True:
             try:
-                progress.update(i/n, 'Downloading stock data', ticker)
                 df[ticker] = get(ticker,start,end)[column]
                 i += 1
+                print(i)
                 break
             except:
-                progress.update(i/n, 'Downloading stock data', f'{ticker}: trying again')
                 pass
-    progress.update(i/n, 'Downloading stock data')
     return df
