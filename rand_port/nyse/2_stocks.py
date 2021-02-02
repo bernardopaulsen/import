@@ -11,7 +11,7 @@ import pickle
 import yahoo
 
 
-with open("nyse.pickle","rb") as file:
+with open("tickers.pickle","rb") as file:
     tickers = pickle.load(file)
 
 print(len(tickers))
@@ -30,6 +30,6 @@ for ticker in tickers:
         print(i/l, f"{ticker} --")
 
 
-with open("nyse_prices.pickle","wb") as file:
+with open("prices.pickle","wb") as file:
     pickle.dump(df,file)
 
