@@ -16,7 +16,7 @@ import time
 options = Options()
 options.add_argument('--headless')
 letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-with webdriver.Chrome("/home/ubuntu/projects/utilities/chromedriver",options=options) as chrome:
+with webdriver.Chrome("/Users/bernardopaulsen/chromedriver",options=options) as chrome:
     tickers = []
     for letter in letters:
         print(letter)
