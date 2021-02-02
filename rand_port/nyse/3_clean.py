@@ -9,7 +9,7 @@ Version    : 0.0.1
 import pickle
 
 
-with open("nyse_prices.pickle","rb") as file:
+with open("prices.pickle","rb") as file:
     df = pickle.load(file)
 
 
@@ -19,5 +19,5 @@ df = df.dropna(1)
 print(len(df.columns))
 
 
-with open("nyse_prices_na.pickle","wb") as file:
+with open("cleaned.pickle","wb") as file:
     pickle.dump(df,file)
